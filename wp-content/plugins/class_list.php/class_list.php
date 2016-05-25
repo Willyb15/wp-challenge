@@ -6,7 +6,7 @@
 * Author: William Bryant
 */
 function say_hello_world(){
-	print "Hello, world";
+	print "Hello, world!!!";
 }
 
 // $theClass = array(
@@ -28,14 +28,22 @@ function getClass(){
 global $wpdb;
 
 $result = $wpdb->get_results('SELECT * FROM class_list');
-
-$class = array();
+// $encoded_class = json_encode($result);
+// print_r($result);
+// $class = array();
 
 foreach($result as $row){
-	$class[] = get_object_vars($row);
+	$class [] = get_object_vars($row);
 }
+
+usort($class, function($a, $b){
+	return strcasecmp($a['name'], $b['name']);
+});
+
 print '<pre>';
-print_r($class);
+// ksort($class[0]);
+print_r($result);
+exit;
 
 
 // print_r($class);

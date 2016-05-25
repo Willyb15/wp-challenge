@@ -21,6 +21,10 @@ get_header();
 		<main id="main" class="site-main" role="main">
 
 		<?php say_hello_world(); ?>
+
+
+		<?php getClass();?>
+
 		<br>
 <!-- 		<?php foreach($theClass as $student){
 			//print $student.' '.'<br>';
@@ -39,7 +43,5 @@ get_header();
 		document.write(theClassArray[i]);
 	}
 </script> -->
-
-<?php getClass();?>
 
 
